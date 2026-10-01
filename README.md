@@ -2,6 +2,20 @@
 
 Plataforma inteligente que conecta a profesores y estudiantes de preparatoria mediante agentes de inteligencia artificial construidos con **Google Agent Development Kit (ADK)**, bases de datos **PostgreSQL**, almacenamiento de documentos en **Google Cloud Storage (GCS)** y recuperación de información **RAG en Vertex AI Search**.
 
+## Capturas de Pantalla
+
+### Inicio de sesión
+
+![Inicio de sesión](Screenshot_login.png)
+
+### Panel principal
+
+![Panel principal](Screenshot_dashboard.png)
+
+### Tutor de ensayos
+
+![Tutor de ensayos](Screenshot_tutor.png)
+
 ## Estructura del Repositorio
 
 ```text
