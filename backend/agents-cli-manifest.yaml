@@ -1,0 +1,18 @@
+name: 'sharon-api'
+acli_version: '1.6.1'
+agent_directory: 'essay_tutor'
+region: 'us-central1'
+base_template: 'local_backend'
+generated_at: '2026-09-29T18:58:31.407900+00:00'
+language: 'python'
+create_params:
+  # The ADK name of the root agent, as rendered into the agent source. Rename
+  # the agent and you must change it in both places: telemetry reports this as
+  # gen_ai.agent.name, and it is what agents-cli reports for the project.
+  root_agent_name: 'essay_tutor'
+  deployment_target: 'cloud_run'
+  session_type: 'cloud_sql'
+  cicd_runner: 'skip'
+  is_a2a: true
+  agent_gateway: False
+  agent_guidance_filename: 'CLAUDE.md'

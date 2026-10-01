@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Newsreader', ui-serif, Georgia, serif;
+
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --color-brand-800: #3730a3;
+  --color-brand-900: #312e81;
+
+  --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 16px -4px rgb(15 23 42 / 0.08);
+  --shadow-lift: 0 2px 4px rgb(15 23 42 / 0.04), 0 12px 32px -8px rgb(15 23 42 / 0.14);
+
+  --animate-fade-in: fade-in 0.35s ease-out both;
+  --animate-pop: pop 0.2s ease-out both;
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes pop {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-slate-50 text-slate-800;
+  }
+  ::selection {
+    @apply bg-brand-200 text-brand-900;
+  }
+}
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(203 213 225) transparent;
+}
+
+.prose-chat > * + * { margin-top: 0.6em; }
+.prose-chat ul { list-style: disc; padding-left: 1.2em; }
+.prose-chat ol { list-style: decimal; padding-left: 1.2em; }
+.prose-chat li + li { margin-top: 0.2em; }
+.prose-chat strong { font-weight: 600; color: rgb(15 23 42); }
+.prose-chat h1, .prose-chat h2, .prose-chat h3 { font-weight: 600; color: rgb(15 23 42); }
+.prose-chat code { background: rgb(241 245 249); padding: 0.1em 0.35em; border-radius: 0.3em; font-size: 0.9em; }
+.prose-chat blockquote { border-left: 3px solid var(--color-brand-300); padding-left: 0.8em; color: rgb(71 85 105); font-style: italic; }
+.prose-chat a { color: var(--color-brand-600); text-decoration: underline; }
+
+/* Párrafo citado por Sharon: se resalta como marcatexto y se desvanece */
+.paragraph-flash {
+  color: transparent;
+  border-radius: 3px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  animation: paragraph-flash 3.6s ease-out forwards;
+}
+@keyframes paragraph-flash {
+  0%, 70% { background-color: rgb(253 230 138 / 0.7); box-shadow: 0 0 0 3px rgb(253 230 138 / 0.7); }
+  100% { background-color: transparent; box-shadow: 0 0 0 3px transparent; }
+}
+.paragraph-badge { animation: paragraph-badge 3.6s ease-out forwards; }
+@keyframes paragraph-badge {
+  0% { opacity: 0; transform: translateX(6px); }
+  10%, 75% { opacity: 1; transform: none; }
+  100% { opacity: 0; }
+}
